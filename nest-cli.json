@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "src",
+  "compilerOptions": {
+    "deleteOutDir": true,
+    "webpack": true
+  },
+  "projects": {
+    "domain-auth": {
+      "type": "library",
+      "root": "libs/domain-auth",
+      "entryFile": "index",
+      "sourceRoot": "libs/domain-auth/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/domain-auth/tsconfig.lib.json"
+      }
+    },
+    "domain-users": {
+      "type": "library",
+      "root": "libs/domain-users",
+      "entryFile": "index",
+      "sourceRoot": "libs/domain-users/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/domain-users/tsconfig.lib.json"
+      }
+    },
+    "resource-auth": {
+      "type": "library",
+      "root": "libs/resource-auth",
+      "entryFile": "index",
+      "sourceRoot": "libs/resource-auth/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/resource-auth/tsconfig.lib.json"
+      }
+    },
+    "resource-users": {
+      "type": "library",
+      "root": "libs/resource-users",
+      "entryFile": "index",
+      "sourceRoot": "libs/resource-users/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/resource-users/tsconfig.lib.json"
+      }
+    },
+    "data-source": {
+      "type": "library",
+      "root": "libs/data-source",
+      "entryFile": "index",
+      "sourceRoot": "libs/data-source/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/data-source/tsconfig.lib.json"
+      }
+    },
+    "shared": {
+      "type": "library",
+      "root": "libs/shared",
+      "entryFile": "index",
+      "sourceRoot": "libs/shared/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/shared/tsconfig.lib.json"
+      }
+    }
+  }
+}

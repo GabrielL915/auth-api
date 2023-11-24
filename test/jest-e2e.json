@@ -1,0 +1,31 @@
+{
+  "moduleFileExtensions": [
+    "js",
+    "json",
+    "ts"
+  ],
+  "rootDir": ".",
+  "testEnvironment": "node",
+  "testRegex": ".e2e-spec.ts$",
+  "transform": {
+    "^.+\\.(t|j)s$": "ts-jest"
+  },
+  "moduleNameMapper": {
+    "domain/domain/(.*)": "<rootDir>/../libs/domain/src/$1",
+    "domain/domain": "<rootDir>/../libs/domain/src",
+    "data-source/data-source/(.*)": "<rootDir>/../libs/data-source/src/$1",
+    "data-source/data-source": "<rootDir>/../libs/data-source/src",
+    "domainAuth/domain-auth/(.*)": "<rootDir>/../libs/domain-auth/src/$1",
+    "domainAuth/domain-auth": "<rootDir>/../libs/domain-auth/src",
+    "domainUsers/domain-users/(.*)": "<rootDir>/../libs/domain-users/src/$1",
+    "domainUsers/domain-users": "<rootDir>/../libs/domain-users/src",
+    "resourceAuth/resource-auth/(.*)": "<rootDir>/../libs/resource-auth/src/$1",
+    "resourceAuth/resource-auth": "<rootDir>/../libs/resource-auth/src",
+    "resourceUsers/resource-users/(.*)": "<rootDir>/../libs/resource-users/src/$1",
+    "resourceUsers/resource-users": "<rootDir>/../libs/resource-users/src",
+    "dataSource/data-source/(.*)": "<rootDir>/../libs/data-source/src/$1",
+    "dataSource/data-source": "<rootDir>/../libs/data-source/src",
+    "shared/shared/(.*)": "<rootDir>/../libs/shared/src/$1",
+    "shared/shared": "<rootDir>/../libs/shared/src"
+  }
+}

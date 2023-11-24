@@ -1,0 +1,60 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "ES2021",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "incremental": true,
+    "skipLibCheck": true,
+    "strictNullChecks": false,
+    "noImplicitAny": false,
+    "strictBindCallApply": false,
+    "forceConsistentCasingInFileNames": false,
+    "noFallthroughCasesInSwitch": false,
+    "strictPropertyInitialization": false,
+    "paths": {
+      "domainAuth/domain-auth": [
+        "libs/domain-auth/src"
+      ],
+      "domainAuth/domain-auth/*": [
+        "libs/domain-auth/src/*"
+      ],
+      "domainUsers/domain-users": [
+        "libs/domain-users/src"
+      ],
+      "domainUsers/domain-users/*": [
+        "libs/domain-users/src/*"
+      ],
+      "resourceAuth/resource-auth": [
+        "libs/resource-auth/src"
+      ],
+      "resourceAuth/resource-auth/*": [
+        "libs/resource-auth/src/*"
+      ],
+      "resourceUsers/resource-users": [
+        "libs/resource-users/src"
+      ],
+      "resourceUsers/resource-users/*": [
+        "libs/resource-users/src/*"
+      ],
+      "dataSource/data-source": [
+        "libs/data-source/src"
+      ],
+      "dataSource/data-source/*": [
+        "libs/data-source/src/*"
+      ],
+      "shared/shared": [
+        "libs/shared/src"
+      ],
+      "shared/shared/*": [
+        "libs/shared/src/*"
+      ]
+    }
+  }
+}
