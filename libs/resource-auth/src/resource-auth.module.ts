@@ -1,8 +1,7 @@
 import { Module } from '@nestjs/common';
-import { ResourceAuthService } from './resource-auth.service';
 
 @Module({
-  providers: [ResourceAuthService],
-  exports: [ResourceAuthService],
+  providers: [],
+  exports: [],
 })
 export class ResourceAuthModule {}
