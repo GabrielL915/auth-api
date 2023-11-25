@@ -3,7 +3,8 @@
 /node_modules
 
 .env
-
+private.key
+public.key
 # Logs
 logs
 *.log

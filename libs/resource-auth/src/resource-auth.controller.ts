@@ -1,15 +1,30 @@
- import { Controller, Post, Body, } from '@nestjs/common';
- import { CadastroUseCase } from 'domainAuth/domain-auth';
- import { LoginUseCase } from 'domainAuth/domain-auth';
+import { Controller, Post, Body, HttpCode, HttpStatus, UseGuards } from '@nestjs/common';
+import {
+  CadastroUseCase,
+  LoginUseCase,
+  CadastroRequestDto,
+  LoginRequestDto,
+} from 'domainAuth/domain-auth';
+import { Public, AccessTokenGuard } from 'shared/shared';
 
-
-@Controller('resource-auth')
+@Controller('auth-resource')
 export class ResourceAuthController {
-  constructor(private readonly cadastroUsecase: CadastroUseCase,
-    private readonly loginUseCase: LoginUseCase) {}
+  constructor(
+    private readonly cadastroUsecase: CadastroUseCase,
+    private readonly loginUseCase: LoginUseCase,
+  ) {}
 
-  @Post()
-  create(@Body() createResourceAuthDto: any) {
-    return this.cadastroUsecase.execute(createResourceAuthDto);
+  @Public()
+  @UseGuards(AccessTokenGuard)
+  @Post('cadastro')
+  cadastro(@Body() input: CadastroRequestDto) {
+    return this.cadastroUsecase.execute(input);
   }
-} 
+
+  @Public()
+  @Post('login')
+  @HttpCode(HttpStatus.OK)
+  login(@Body() input: LoginRequestDto) {
+    return this.loginUseCase.execute(input);
+  }
+}

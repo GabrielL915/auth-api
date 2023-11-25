@@ -1,4 +1,4 @@
-import { IsString, MinLength } from 'class-validator';
+import { IsNumber, IsString, MinLength } from 'class-validator';
 
 export class CadastroRequestDto {
   @IsString({ message: 'Name must be a string'})
@@ -11,6 +11,6 @@ export class CadastroRequestDto {
   @MinLength(8, { message: 'Password must be at least 8 characters long'})
   password: string;
 
-  @IsString({ message: 'Age must be a number'})
+  @IsNumber()
   age: number;
 }
