@@ -1,32 +1,15 @@
-/* import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+ import { Controller, Post, Body, } from '@nestjs/common';
+ import { CadastroUseCase } from 'domainAuth/domain-auth';
+ import { LoginUseCase } from 'domainAuth/domain-auth';
 
 
 @Controller('resource-auth')
 export class ResourceAuthController {
-  constructor(private readonly resourceAuthService: ResourceAuthService) {}
+  constructor(private readonly cadastroUsecase: CadastroUseCase,
+    private readonly loginUseCase: LoginUseCase) {}
 
   @Post()
-  create(@Body() createResourceAuthDto: CreateResourceAuthDto) {
-    return this.resourceAuthService.create(createResourceAuthDto);
+  create(@Body() createResourceAuthDto: any) {
+    return this.cadastroUsecase.execute(createResourceAuthDto);
   }
-
-  @Get()
-  findAll() {
-    return this.resourceAuthService.findAll();
-  }
-
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.resourceAuthService.findOne(+id);
-  }
-
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateResourceAuthDto: UpdateResourceAuthDto) {
-    return this.resourceAuthService.update(+id, updateResourceAuthDto);
-  }
-
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.resourceAuthService.remove(+id);
-  }
-} */
+} 
