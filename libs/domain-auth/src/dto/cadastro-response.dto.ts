@@ -3,6 +3,9 @@ import { CadastroRequestDto } from './cadastro-request.dto';
 import { IsNumber, IsString } from 'class-validator';
 
 export class CadastroResponseDto extends PartialType(CadastroRequestDto) {
+
+  id?: string;
+
   @IsString({ message: 'Name must be a string' })
   name: string;
 

@@ -1,11 +1,11 @@
-import { Controller, Post, Body, HttpCode, HttpStatus, UseGuards } from '@nestjs/common';
+import { Controller, Post, Body, HttpCode, HttpStatus } from '@nestjs/common';
 import {
   CadastroUseCase,
   LoginUseCase,
   CadastroRequestDto,
   LoginRequestDto,
 } from 'domainAuth/domain-auth';
-import { Public, AccessTokenGuard } from 'shared/shared';
+import { Public } from 'shared/shared';
 
 @Controller('auth-resource')
 export class ResourceAuthController {
@@ -15,7 +15,6 @@ export class ResourceAuthController {
   ) {}
 
   @Public()
-  @UseGuards(AccessTokenGuard)
   @Post('cadastro')
   cadastro(@Body() input: CadastroRequestDto) {
     return this.cadastroUsecase.execute(input);

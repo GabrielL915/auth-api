@@ -1,2 +1,1 @@
-export * from './domain-users.module';
-export * from './domain-users.service';
+export * from './entities/user.entity';
