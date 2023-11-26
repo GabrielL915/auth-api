@@ -1,5 +1,5 @@
-import { UserRepository } from "./user-repository";
-import { User } from "domainUsers/domain-users";
+import { UserRepository } from './user-repository';
+import { User } from 'domainUsers/domain-users';
 import { CadastroRequestDto } from 'domainAuth/domain-auth';
 import { InjectKnex, Knex } from 'nestjs-knex';
 
@@ -12,7 +12,10 @@ export class UserRepositoryImpl implements UserRepository {
   }
 
   async updateOne(id: string, input: any): Promise<User> {
-    const [user] = await this.knex('users').update(input).where({ id }).returning('*');
+    const [user] = await this.knex('users')
+      .update(input)
+      .where({ id })
+      .returning('*');
     return user;
   }
 
@@ -28,6 +31,11 @@ export class UserRepositoryImpl implements UserRepository {
 
   async findOne(id: string): Promise<User> {
     const [user] = await this.knex('users').select('*').where({ id });
+    return user;
+  }
+
+  async findOneByEmail(email: string): Promise<User> {
+    const [user] = await this.knex('users').select('*').where({ email });
     return user;
   }
 }

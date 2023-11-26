@@ -15,4 +15,5 @@ export abstract class UserRepository
     abstract deleteOne(id: string): Promise<string>;
     abstract findAll(): Promise<User[]>;
     abstract findOne(id: string): Promise<User>;
+    abstract findOneByEmail(email: string): Promise<User>
 }
