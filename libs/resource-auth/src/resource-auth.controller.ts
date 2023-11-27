@@ -7,7 +7,7 @@ import {
 } from 'domainAuth/domain-auth';
 import { Public } from 'shared/shared';
 
-@Controller('auth-resource')
+@Controller('auth')
 export class ResourceAuthController {
   constructor(
     private readonly cadastroUsecase: CadastroUseCase,

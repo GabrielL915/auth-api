@@ -14,4 +14,7 @@ export class CadastroResponseDto extends PartialType(CadastroRequestDto) {
 
   @IsNumber()
   age: number;
+
+  createdAt?: Date;
+
 }

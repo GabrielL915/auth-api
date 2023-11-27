@@ -30,7 +30,7 @@ export class UserRepositoryImpl implements UserRepository {
   }
 
   async findOne(id: string): Promise<User> {
-    const [user] = await this.knex('users').select('*').where({ id });
+    const [user] = await this.knex('users').select('*').where({ id: id });
     return user;
   }
 
